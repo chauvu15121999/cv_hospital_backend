@@ -17,6 +17,9 @@ module.exports = {
       discription: {
         type: Sequelize.TEXT
       },
+      file: {
+        type: Sequelize.TEXT
+      },
       timeType: {
         type: Sequelize.STRING
       },

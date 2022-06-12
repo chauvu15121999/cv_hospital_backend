@@ -29,7 +29,13 @@ module.exports = {
       gender: {
         type: Sequelize.BOOLEAN
       },
-      roldid: {
+      roleid: {
+        type: Sequelize.STRING
+      },
+      phoneNumber: {
+        type: Sequelize.STRING
+      },
+      positionId: {
         type: Sequelize.STRING
       },
       createdAt: {
