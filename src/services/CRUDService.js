@@ -23,7 +23,6 @@ let createNewUser = (data) => {
             reject(e)
         }
     })
-
 }
 
 let getAllUser = () => {
