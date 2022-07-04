@@ -37,7 +37,7 @@ const handleGetUser = async (req , res ) => {
 
 const handleCreateNewUser = async (req , res) => {
     let message = await userService.createNewUser(req.body);
-    return res.status(status).json(message)
+    return res.status(200).json(message)
 }
 
 const handleDeleteUser = async (req , res) => {

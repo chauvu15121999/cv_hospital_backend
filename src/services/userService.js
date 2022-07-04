@@ -90,22 +90,23 @@ const createNewUser = (data) => {
                     errCode: 1,
                     message: "Your email is already is used, Plz try another email!",
                 })
+            }else{
+                let hashPassword = await hashUserPassword(data.password);
+                await db.Users.create({
+                    email: data.email,
+                    password: hashPassword,
+                    firstName: data.firstName,
+                    lastName: data.lastName,
+                    address: data.address,
+                    gender: data.gender ?  true : false,
+                    roledid: data.roleId,
+                    phoneNumber: data.phoneNumber
+                })
+                resolve({
+                    errCode: 0,
+                    message: "OK"
+                })
             }
-            let hashPassword = await hashUserPassword(data.password);
-            await db.Users.create({
-                email: data.email,
-                password: hashPassword,
-                firstName: data.firstName,
-                lastName: data.lastName,
-                address: data.address,
-                gender: data.gender ?  true : false,
-                roledid: data.roleId,
-                phoneNumber: data.phoneNumber
-            })
-            resolve({
-                errCode: 0,
-                message: "OK"
-            })
         }catch(e){
             reject(e)
         }
